@@ -1,0 +1,8 @@
+Tarea para el 3/7:
+
+1. Armar navegacion de aside
+    https://developer.mozilla.org/en-US/ 
+
+2. diseñar la estructura semantica de:
+    https://files.slack.com/files-pri/T077N88610A-F07ALKB65DJ/image.png
+
