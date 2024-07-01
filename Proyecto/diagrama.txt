@@ -1,0 +1,72 @@
++-- html
+    |
+    +-- head
+    |    |
+    |    +-- meta (charset=UTF-8)
+    |    +-- meta (viewport)
+    |    +-- title (Össur - Naked Prosthetics)
+    |    +-- link (rel=stylesheet, href=style.css)
+    |
+    +-- body
+    |    |
+    |    +-- header
+    |    |    |
+    |    |    +-- div (container)
+    |    |    |    |
+    |    |    |    +-- div (logo)
+    |    |    |    |    |
+    |    |    |    |    +-- img (logo.png)
+    |    |    |    +-- div (nav)
+    |    |    |    |    |
+    |    |    |    |    +-- a (href=#)
+    |    |    |    |    |    |
+    |    |    |    |    |    +-- img (flag-spain.png)
+    |    |    |    |    +-- a (href=#)
+    |    |    |    |    |    |
+    |    |    |    |    |    +-- i (fas fa-search)
+    |    |    |    |    +-- a (href=#)
+    |    |    |    |    |    |
+    |    |    |    |    |    +-- i (fas fa-bars)
+    |
+    |    +-- section (hero)
+    |    |    |
+    |    |    +-- div (container)
+    |    |    |    |
+    |    |    |    +-- h1 (Naked Prosthetics)
+    |    |    |    +-- p (Prótesis de dedo adaptadas a su vida diaria)
+    |    |    |    +-- button (Explorar)
+    |    |    |    +-- img (hero-image.jpg)
+    |
+    |    +-- section (about)
+    |    |    |
+    |    |    +-- div (container)
+    |    |    |    |
+    |    |    |    +-- div (title)
+    |    |    |    |    |
+    |    |    |    |    +-- h2 (Dedicados a mejorar la movilidad de las personas)
+    |    |    |    |    +-- hr
+    |    |    |    +-- p (Össur centra sus esfuerzos y experiencia...)
+    |
+    |    +-- section (products)
+    |    |    |
+    |    |    +-- div (container)
+    |    |    |    |
+    |    |    |    +-- div (product)
+    |    |    |    |    |
+    |    |    |    |    +-- img (product-1.jpg)
+    |    |    |    |    +-- h3 (Quillas deportivas Cheetah)
+    |    |    |    |    +-- p (Delgada. Atlética. Icónica.)
+    |    |    |    |    +-- p (#ChoiceOfChampions)
+    |    |    |    |    +-- a (href=#, Más Informaciones)
+    |    |    |    +-- div (product)
+    |    |    |    |    |
+    |    |    |    |    +-- img (product-2.jpg)
+    |    |    |    |    +-- h3 (Prótesis)
+    |    |    |    |    +-- p (Dirigidas a personas con amputación...)
+    |    |    |    |    +-- a (href=#, Conozca las principales prótesis de Össur)
+    |
+    |    +-- footer
+    |    |    |
+    |    |    +-- div (container)
+    |    |    |    |
+    |    |    |    +-- p (&copy; 2023 Össur)

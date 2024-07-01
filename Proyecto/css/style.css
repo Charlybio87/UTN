@@ -1,0 +1,122 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #f2f2f2;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 30px;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #333;
+    margin-left: 20px;
+}
+
+.hero {
+    background-image: url('https://www.ossur.com/media/11588/hero-naked-prosthetics.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+}
+
+.hero h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.hero button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.section {
+    padding: 40px;
+}
+
+.section h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.section p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.section-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.section-image {
+    width: 500px;
+}
+
+.section-text {
+    width: 400px;
+}
+
+.section-text h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.section-text p {
+    margin-bottom: 10px;
+}
+
+.section-text a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.section-text a:hover {
+    background-color: #0056b3;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
