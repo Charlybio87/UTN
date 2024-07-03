@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/Parte 2/navComplejo.html" method="post"><!--- Crea formulario-->
+        <h1>Formulario de registro</h1>
+        <div>
+            <label for="fullname">Ingrese nombre completo: </label><!--Indicar loque se debe escribir en el input-->
+            <input id="fullname" type="text" name="fullname" placeholder="Name">
+        </div>
+        <div>
+            <label for="mail">Ingrese su Email: </label>
+            <input id="mail" type="email" name="mail" placeholder="Email">
+        </div>
+        <div>    
+            <label for="password">Ingrese contraseña: </label>
+            <input id="password" type="password" name="password" placeholder="password">
+        </div>
+        <div>    
+            <label for="file">Ingrese archivo: </label>
+            <input id="file" type="file" name="file">
+        </div>
+        <div>
+            <label for="lenguaje-preferido">Seleccione su lenguaje:</label>
+            <div>
+                <label for="html" >html</label>
+                <input type="radio"id="html" name="lenguaje-preferido">
+                <label for="css">css</label>
+                <input type="radio" id="css" name="lenguaje-preferido">
+                <label for="js">js</label>
+                <input type="radio" id="jss" name="lenguaje-preferido">
+            </div>
+        </div>
+        <div>
+            <label for="talle">Talle</label>
+            <select id="talle" name="talle">
+                <option value="L">large</option>
+                <option value="M">medio</option>
+                <option value="S">small</option>
+                <option disabled selected">No seleccionado</option>
+            </select>
+        </div>
+        <input type="submit" value="Enviar">
+        
+        <!-- <button type="button">Enviar</button>boton generico -->
+        <!-- <button type="submit">Enviar</button>boton submit -->
+    </form>
+</body>
+</html>
