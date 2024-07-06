@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Formulario HubSpot</title>
     <style>
+
         body{
             font-family: Arial, Helvetica, sans-serif;
             color: #213343;
         }
-
         h2 {
             font-size: 29.25px;
             text-align: center;
@@ -28,14 +28,14 @@
         .boton {
             background: #ff5c35;
             color: white;
-            font-size: 19.125px;
-
+            font-size: 19px;
         }
         footer {
             color: white;
             background-color: #192733;
             font-size: 18px;
         }
+
     </style>
 </head>
 <body>
@@ -43,28 +43,26 @@
     <form>
         <div>
             <label for="firstname"><span>First Name*</span></label>
-            <input id="firstname" name="firstname" type="text"></div>
-        <div>
+            <input id="firstname" name="firstname" type="text" required>
             <label for="lastname"><span>Last Name*</span></label>
-            <input id="lastname" name="lastname" type="text">
+            <input id="lastname" name="lastname" type="text" required>
         </div>
         <div>
             <label for="mail"><span>Email*</span></label>
-            <input id="mail" name="mail" type="email">
-        </div>
-        <div><label for="numberphone"><span>Phone Number*</span></label>
-            <input id="numberphone" name="numberphone" type="tel">
+            <input id="mail" name="mail" type="email" required>
         </div>
         <div>
+            <label for="numberphone"><span>Phone Number*</span></label>
+            <input id="numberphone" name="numberphone" type="tel" required>
             <label for="Companyname"><span>Company Name*</span></label>
-            <input id="Companyname" name="Companyname" type="text"></div>
+            <input id="Companyname" name="Companyname" type="text" required></div>
         <div>
             <label for="website"><span>Website URL*</span></label>
-            <input id="website" name="website" type="url">
+            <input id="website" name="website" type="url" required>
         </div>
         <div>
             <label for="employees-word"><span>How many employees work there?*</span></label>
-            <select id="employees-word" name="employees-word">
+            <select id="employees-word" name="employees-word" required>
                 <option disabled selected>- Please Select -</option>
                 <option value="1">1</option>
                 <option value="2 to 5">2 to 5</option>
@@ -77,7 +75,7 @@
                 <option value="10.001 to more">10.001 to more</option>
             </select>    
         </div>
-        <div>
+        <div class="privacy">
             <p>We're committed to your privacy. HubSpot uses the information you provide to us to contact you about our relevant content, products, and services. You may unsubscribe from these communications at any time. For more information, check out our 
                 <u>
                     <a href="https://legal.hubspot.com/privacy-policy">
@@ -90,6 +88,7 @@
             <input class="boton" type="submit" value="Register now">
         </div>
     </form>
+    <!-- Fin del Form -->
     <br>
     <div>
         <a href="http://hubs.ly/H022kLQ0?_ga=2.142597104.359071575.1720037192-270543057.1720037192&amp;_gl=1*33lh60*_ga*MjcwNTQzMDU3LjE3MjAwMzcxOTI.*_ga_PGS0GR6KHN*MTcyMDAzNzE5MS4xLjAuMTcyMDAzNzE5MS42MC4wLjA.">
