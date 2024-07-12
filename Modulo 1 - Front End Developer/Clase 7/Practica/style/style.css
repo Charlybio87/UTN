@@ -1,9 +1,27 @@
+/* Global Styles */
+
 * {
     box-sizing: border-box;
-    font-size: 62.5%; /* Sistema rem */
+    font-size: 62.5%;
     background-color: rgba(253, 243, 252, 0.5);
-    font-family: "DM Sans", sans-serif;
+    font-family: "DM Sans",sans-serif;
 }
+
+.section-button {
+    width: 430px;
+}
+
+.section-discount {
+    width: 430px;
+    color: #727586;
+}
+
+.section-card {
+    width: 430px;
+    font-family: Proxima Nova, -apple-system, Roboto, Arial, sans-serif;
+}
+
+/* Seccion Buttons*/
 
 .button {
     width: 248px;
@@ -18,115 +36,28 @@
 .button-morado {
     background-color: #673DE6;
     color: white;
-}
-
+    }
 .button-blanco {
     background-color: white;
     color: #673DE6;
     border: 2px solid #673de6;
 }
-
-.plan-section {
-    width: 430px;
-    /* Usa max-width para que la sección se ajuste al contenido */
-    /* height: 126px;  Comenta o utiliza un valor más flexible */
-}
-
-.discount-section {
-    width: 430px;
-    /* height: 126px; */
-    color: #727586;
-}
-
-  .discount-item { /* Nuevo nombre para la clase */
-    width: 210px;
-    margin: 30px 30px 0 15px;
-}
-
-.moneda {
-    text-decoration: line-through;
-    padding: 0 1px;
-}
-
-.valor {
-    text-decoration: line-through;
-    padding: 0 1px;
-}
-
 .button-gris {
-    background-color: rgb(230, 236, 255);
+    background-color: rgb(230,236,255);
     color: #2f1c6a;
+    border: none;
     font-size: 15px;
     font-weight: 700;
     display: inline-block;
     line-height: 24px;
-    border: none;
     border-radius: 20px;
-    padding: 4px 12px;
+    padding: 4px 2px;
+    margin: 30px 0px ;
+    width: 125px;
 }
-
-  .discount-amount { /* Nuevo nombre para la clase */
-    width: 300px;
-    color: #2F1C6A;
-    font-size: large;
-    margin: 30px 0 0 5px;
-}
-
-.valor-grande {
-    font-size: 50px;
-}
-
-  .card-section { /* Nombre más descriptivo */
-    width: 430px;
-    height: 300px;
-    font-family: "Proxima Nova", -apple-system, Roboto, Arial, sans-serif;
-}
-
-  .card-item { /* Nombre más descriptivo */
-    margin: 30px 30px 0 30px;
-    width: 163px;
-    height: 285px;
-    border: 0 solid transparent;
-}
-
-.card-item_titulo {
-    width: 135.198px;
-    height: 20px;
-    padding: 16px 12px 16px 16px;
-    color: #000000E6;
-    font-size: 16px;
-}
-
-.card-item_imagen {
-    text-align: center;
-}
-
-img {
-    width: 105px;
-    height: 105px;
-    display: block;
-    margin: 0 auto; /* Centrar la imagen */
-}
-
-.card-item_texto {
-    width: 131.198px;
-    height: 48px;
-    padding: 12px 16px 12px 16px;
-    font-size: 15px;
-    font-weight: 100;
-    line-height: 18px;
-    text-align: center;
-    opacity: 0.9; /* Usa opacity para la transparencia */
-}
-
-  .card-item_button { /* Unifica el nombre de la clase */
-    width: 163px;
-    height: 56px;
-    text-align: center;
-}
-
 .button-calzado {
-    width: 115.2px;
+    box-sizing: unset;
+    width: 130px;
     height: 25px;
     background-color: #D9E7FA;
     color: #3483fa;
@@ -137,7 +68,69 @@ img {
     padding: 2px 8px;
     border-radius: 6px;
     border: 0 solid transparent;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
+}
+
+/* Seccion Descuentos */
+
+.moneda {
+    text-decoration: line-through;
+    padding: 0 1px;
+}
+.valor {
+    text-decoration: line-through;
+    padding: 0 1px;
+}
+
+.discount-amount {
+    width: 300px;
+    color: #2F1C6A;
+    font-size: large;
+    margin: 30px 0 0 5px;
+}
+.valor-grande {
+    font-size: 50px;
+}
+
+/* Seccion Card */
+
+.card-item {
+    margin: 30px;
+    width: 163px;
+    height: 310px;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .1);
+}
+.card-item_titulo {
+    box-sizing: unset;
+    width: 135.198px;
+    height: 20px;
+    padding: 16px 12px 16px 16px;
+    color: #000000E6;
+    font-size: 16px;
+}
+.card-item_imagen {
+    text-align: center;
+}
+img {
+    width: 105px;
+    height: 105px;
+}
+.card-item_texto{
+    box-sizing: unset;
+    width: 131.198px;
+    height: 48px;
+    padding: 12px 16px 12px 16px;
+    font-size: 15px;
+    font-weight: 100;
+    line-height: 18px;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.9);
+}
+.card-item_button {
+    box-sizing: unset;
+    width: 163px;
+    height: 56px;
+    margin-top:25px ;
+    text-align: center;
 }
