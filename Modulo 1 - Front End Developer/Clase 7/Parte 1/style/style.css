@@ -1,0 +1,48 @@
+* {
+    box-sizing: border-box;
+}
+h1 {
+    color: rebeccapurple;
+}
+a {
+    text-decoration: none;
+    color: royalblue;
+    font-size: large;
+}
+input {
+    text-align: center;
+    margin: 0 0 10px 10px ;
+
+}
+span {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+}
+.contacto {
+    color: red;
+}
+.caja {
+    text-align: center;
+    font-size: larger;
+    font-weight: 700;
+    width: 200px;
+    height: 200px;
+    background-color: rgb(173, 216, 230);
+    /* padding-left: 20px; */
+    padding: 50px 35px;
+    border-top: 35px solid rgb(173, 216, 230);
+    border-top-color: rgba(8, 73, 60, 0.507) ;
+    box-sizing: border-box;
+    margin: 50px 20px;
+}
+
+.caja-especial {
+    width: 200px;
+    height: 200px;
+    border-radius: 50px;
+    background: #892be2;
+    box-shadow:  
+        10px 0px 20px #7425c0,
+        inset 0px 5px #9e31ff; 
+}

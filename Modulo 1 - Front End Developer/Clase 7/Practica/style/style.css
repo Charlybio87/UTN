@@ -1,0 +1,135 @@
+* {
+    box-sizing: border-box;
+    font-size: 62.5%;
+    background-color: rgba(253, 243, 252, 0.5);
+    font-family: "DM Sans",sans-serif;
+}
+section.section-button {
+    width: 430px;
+    height: 126px;
+}
+.button-morado {
+    width: 248px;
+    height: 48px;
+    background-color: #673DE6;
+    border-radius: 8px;
+    color: white;
+    font-size: medium;
+    text-align: center;
+    padding-top: 15px;
+    margin: 30px 30px 0 30px;
+
+}
+.button-blanco {
+    width: 248px;
+    height: 48px;
+    background-color: white;
+    border-radius: 8px;
+    color: #673DE6;
+    border: 2px solid #673de6;
+    font-size: medium;
+    text-align: center;
+    padding-top: 15px;
+    margin: 30px 30px 0 30px;
+}
+section.section-text {
+    width: 430px;
+    height: 126px;
+    color: #727586;
+
+}
+div.section-descuento{
+    width: 210px;
+    margin: 30px 30px 0 15px;
+}
+span.moneda {
+    text-decoration: line-through;
+    padding: 0 1px;
+}
+span.valor {
+    text-decoration: line-through;
+    padding: 0 1px;
+}
+button.button-gris {
+    background-color: rgb(230,236,255);
+    color: #2f1c6a;
+    font-size: 15px;
+    font-weight: 700;
+    display: inline-block;
+    line-height: 24px;
+    border: none;
+    border-radius: 20px;
+    padding: 4px 12px;
+}
+div.section-descuento_grande {
+    width: 300px;
+    color: #2F1C6A;
+    font-size: large;
+    margin: 30px 0 0 5px;
+}
+span.valor-grande {
+    font-size: 50px;
+}
+
+section.section-card {
+    width: 430px;
+    height: 300px;
+    font-family: Proxima Nova, -apple-system, Roboto, Arial, sans-serif;
+}
+
+div.card-calzado {
+    margin: 30px 30px 0 30px;
+    width: 163px;
+    height: 285px;
+    border: 0 solid transparent;
+}
+.card-calzado_titulo {
+    box-sizing: unset;
+    width: 135.198px;
+    height: 20px;
+    padding: 16px 12px 16px 16px;
+    color: #000000E6;
+    font-size: 16px;
+}
+.card-calzado_imagen {
+    text-align: center;
+}
+img {
+    width: 105px;
+    height: 105px;
+}
+.card-calzado_texto{
+    box-sizing: unset;
+    width: 131.198px;
+    height: 48px;
+    padding: 12px 16px 12px 16px;
+    font-size: 15px;
+    font-weight: 100;
+    line-height: 18px;
+    text-align: center;
+    rgba(0, 0, 0, 0.9)
+}
+.card-calzado_button {
+    width: 163px;
+    height: 56px;
+}
+.card-calzado_button {
+    text-align: center;
+}
+.button-calzado {
+    box-sizing: unset;
+    width: 115.2px;
+    height: 25px;
+    background-color: #D9E7FA;
+    color: #3483fa;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 12px;
+    text-align: center;
+    padding: 2px 8px;
+    border-radius: 6px;
+    border: 0 solid transparent;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}

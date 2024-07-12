@@ -1,0 +1,33 @@
+* {
+    box-sizing: content-box;
+}
+header {
+    background-color: #fee600;
+    margin-top: 40px;
+    padding: 40px 20px;
+}
+
+header input {
+    width: 500px;
+    padding: 10px 10% 10px 2%;
+    font-size: 15px;
+    border: none;
+    border-radius: 2px;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,.2);
+    border: 1px solid transparent;
+}
+
+
+header input::placeholder {
+    font-size: 16px;
+    
+
+}
+
+/* header input:focus {
+    background-color: rgba(0, 255, 255, 0.178);
+} */
+header input:focus-visible{
+    outline: none;
+    border: 1px solid cornflowerblue;
+}
