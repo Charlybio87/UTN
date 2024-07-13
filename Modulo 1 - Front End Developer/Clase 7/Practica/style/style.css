@@ -94,20 +94,23 @@
 /* Seccion Card */
 
 .card-item {
+    box-sizing: unset;
     margin: 30px;
     width: 163px;
     height: 310px;
+    background-color: white;
     border: 1px solid transparent;
     border-radius: 6px;
-    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .1);
+    box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.5);
 }
 .card-item_titulo {
     box-sizing: unset;
     width: 135.198px;
     height: 20px;
     padding: 16px 12px 16px 16px;
+    font-size: 15px;
+    font-weight: 600;
     color: #000000E6;
-    font-size: 16px;
 }
 .card-item_imagen {
     text-align: center;
@@ -122,15 +125,31 @@ img {
     height: 48px;
     padding: 12px 16px 12px 16px;
     font-size: 15px;
-    font-weight: 100;
+    font-weight: 400;
     line-height: 18px;
     text-align: center;
-    color: rgba(0, 0, 0, 0.9);
 }
 .card-item_button {
-    box-sizing: unset;
+    /* box-sizing: unset; */
     width: 163px;
     height: 56px;
     margin-top:25px ;
     text-align: center;
 }
+a{
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.9);
+}
+/* .card-item_texto:hover span{
+    color: #3483fa;
+} */
+.card-item:hover .card-item_texto{
+    color: #3483fa;
+}
+
+section:hover .button-morado{
+    background-color: white;
+    color: #673DE6;
+    border: 2px solid #673de6;
+}
+
