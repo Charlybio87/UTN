@@ -1,0 +1,152 @@
+* {
+    margin: 0;
+}
+body {
+    background: #fff;
+    color: white;
+    font-family: sans-serif;
+}
+button {
+    align-items: center;
+    border: 1px solid transparent;
+    margin: 25px 0;
+}
+.card {
+    /* display: inline-block; */
+    width: 500px;
+    height: 350px;
+    text-align: center;
+    margin: auto;
+    margin-top: 50px;
+    padding: 20px 10px;
+    box-shadow: 0 0 20px #0007;
+    border-radius: 8px;
+    margin: 44px
+}
+.morado-card {
+    background: rgb(97, 35, 90);
+}
+.red-card {
+    background: #e13838;
+}
+.tarjeta {
+    width: 160px;
+    height: 300px;
+    margin: 30px;
+    background-color: white;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.5);
+    display: inline-block;
+}
+.tarjeta_titulo {
+    width: 130px;
+    height: 20px;
+    margin: 0;
+    padding: 16px 12px 0px 0px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #000000E6;
+}
+.tarjeta_img {
+    text-align: center;
+    width: 105px;
+    height: 105px;
+    margin: 10px 0px;
+}
+.tarjeta_texto {
+    padding: 12px 16px 12px 16px;
+    color: rgba(0, 0, 0, 0.9);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+    text-align: center;
+}
+.tarjeta_button {
+    width: 145px;
+    height: 25px;
+    background-color: #D9E7FA;
+    color: #3483fa;
+    font-size: 10px;
+    font-weight: 600;
+    line-height: 12px;
+    text-align: center;
+    padding: 2px 8px;
+    border-radius: 6px;
+    border: 0 solid transparent;
+}
+.section-button {
+    width: 180px;
+    height: 300px;
+    margin: 30px;
+    background-color: white;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.5);
+    display: inline-block;
+}
+.button {
+    width: 160px;
+    /* height: 20px; */
+    padding: 10px 0 10px 0;
+    margin: 80px 10px;
+    border-radius: 8px;
+    font-size: 10px;
+    text-align: center;
+}
+.button-morado {
+    background-color: #673DE6;
+    color: white;
+}
+.button-blanco {
+    background-color: white;
+    color: #673DE6;
+    border: 2px solid #673de6;
+}
+.blue-card {
+    background: #4938e1;
+}
+.section-discount {
+    width: 180px;
+    height: 300px;
+    margin: 30px;
+    color: #727586;
+    background-color: white;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.5);
+    display: inline-block;
+}
+.section-text {
+    margin: 40px 0;
+}
+.moneda {
+    text-decoration: line-through;
+    padding: 0 1px;
+}
+.valor {
+    text-decoration: line-through;
+    padding: 0 1px;
+}
+.button-gris {
+    width: 125px;
+    height: 30px;
+    background-color: rgb(230,236,255);
+    color: #2f1c6a;
+    border: none;
+    font-size: 10px;
+    font-weight: 700;
+    border-radius: 20px;
+    padding: 4px 2px;
+    text-align: center;
+    margin: 25px;
+}
+.discount-amount {
+    width: 180px;
+    /* margin-top: 30px; */
+    color: #2F1C6A;
+    font-size:10px;
+}
+.valor-grande {
+    font-size: 40px;
+}
