@@ -31,7 +31,47 @@ body {
     font-weight: 400;
     line-height: 31px;
 }
-.section-info {
+.card-titles a {
+    font-size: 18px;
+    line-height: 31.5px;
+    text-decoration: none;
+    text-decoration-line: none;
+}
+.card-titles h3 a {
+    font-size: 21.6px;
+    line-height: 32.4px;
+    margin-bottom: 18px;
+    font-weight: 500;
+}
+section {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem
+}
+section .card-articles {
+    width: 459px;
+    height: 217px;
+    padding: 18px;
+    border: 1px solid #858585;
+    border-radius: 9px;
+}
+section .card-articles .card-title-top {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.section-info-up .card-articles .card-title-top .card-titles {
+    height: 116px;
+}
+.section-info-down .card-articles {
+    height: 185px;
+}
+.section-info-down .card-articles .card-title-top .card-titles {
+    height: 82px;
+}
+
+
+/* .section-info {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -49,17 +89,5 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-}
+} */
 
-.card-titles a {
-    font-size: 18px;
-    line-height: 31.5px;
-    text-decoration: none;
-    text-decoration-line: none;
-}
-.card-titles h3 a {
-    font-size: 21.6px;
-    line-height: 32.4px;
-    margin-bottom: 18px;
-    font-weight: 500;
-}
