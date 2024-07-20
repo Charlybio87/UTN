@@ -23,7 +23,8 @@ aside{
     display: flex;
     flex-direction: column;
     gap: 4.5px;
-    margin: 10px; 
+    margin: 10px;
+    cursor: pointer; 
 }
 aside .sidebar {
     width: 343.328px;
@@ -244,6 +245,9 @@ aside .icons i {
     display: flex;
     align-items: flex-start;
 }
+.bi {
+    color:#d6d6d6;
+}
 p {
     color: #e3e3e8;
 }
@@ -262,4 +266,28 @@ p {
     font-weight: 700;
     color:#9e9ce5;
 }
+.sider-up-3box:hover {
+    background-color: rgb(49,48,59);
+    border-radius: 4px;
+}
+.sider-up-2box:hover {
+    background-color: rgb(49,48,59);
+    border-radius: 4px;
+}
+.sider-med-2box:hover {
+    background-color: rgb(49,48,59);
+    border-radius: 4px;
+}
 
+.sider-down-icons i:hover {
+    color: #6965DB;
+    font-size: 18px;
+    padding: 3px;
+    outline: none;
+} 
+.icons-color-flex button:focus {
+    border:1px solid #6965DB;
+    /* font-size: 30px;
+    padding: 30px; */
+    outline: none;
+} 
