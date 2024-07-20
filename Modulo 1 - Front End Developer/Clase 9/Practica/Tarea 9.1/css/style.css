@@ -70,24 +70,3 @@ section .card-articles .card-title-top {
     height: 82px;
 }
 
-
-/* .section-info {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    row-gap: 18px;
-    column-gap: 18px;
-}
-.section-info .card-articles {
-    width: 459px;
-    height: 217px;
-    padding: 18px;
-    border: 1px solid #858585;
-    border-radius: 9px;
-}
-.card-articles .card-title-top {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-} */
-
