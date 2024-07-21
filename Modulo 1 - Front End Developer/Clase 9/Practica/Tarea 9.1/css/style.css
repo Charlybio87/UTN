@@ -70,3 +70,11 @@ section .card-articles .card-title-top {
     height: 82px;
 }
 
+article:hover{
+    box-shadow: 1px 9px 15px -6px rgba(131,118,118,0.81);
+    -webkit-box-shadow: 1px 9px 15px -6px rgba(131,118,118,0.81);
+    -moz-box-shadow: 1px 9px 15px -6px rgba(131,118,118,0.81);
+}
+a:hover {
+    text-decoration: underline;
+}
