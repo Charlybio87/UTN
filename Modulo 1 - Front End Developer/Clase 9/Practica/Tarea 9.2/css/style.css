@@ -290,7 +290,9 @@ p {
     background-color: rgb(49,48,59);
     border-radius: 4px;
 }
-
+.sider-down-idioma-list:focus-visible {
+    outline: none;
+}
 .sider-down-icons i:hover {
     color: #6965DB;
     font-size: 18px;
