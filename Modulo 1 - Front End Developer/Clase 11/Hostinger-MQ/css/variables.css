@@ -1,5 +1,25 @@
 :root {
+
+    /* Colores */
+
     --primary: #673de6;
     --secundary:#ffffff;
     --card:#5025D1;
+
+    /* Media Queríes  */
+    --phone: 320px;
+    --tablet: 650px;
+    --desktop: 1050px;
+
+    /* Card */
+    --img-1050: 768px;
+    --img-650: 768px;
+    --img-320: 768px;
+    --card-1050:768px;
+    --card-650:768px;
+    --card-320:768px;
+    /* Fuentes */
+
+    /* Separaciones */
+
 }

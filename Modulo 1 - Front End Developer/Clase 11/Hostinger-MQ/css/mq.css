@@ -1,0 +1,42 @@
+@media screen and (max-width: 1050px) {
+    body {
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+    }
+    main {
+        width: var(--desktop);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    main .card-main-img img{
+        width: var(--img-1050); 
+    }
+    main .card-main-img{
+        position: relative;
+        top:300px;
+    }
+    main .card-main-info {
+        width: var(--card-1050);
+        height: 240px;
+        position: relative;
+        top: -550px;
+    }
+    main .card-main-info-item .card-item-check{
+        display: flex;
+        justify-content: flex-start;
+    }   
+    section {
+        width: var(--desktop);
+        flex-direction: column;
+        align-items: center;
+        row-gap: 50px;
+    }
+    section .card-info {
+        width: var(--card-1050);
+    }
+}
+@media screen and (max-width: 650px) {
+
+}
