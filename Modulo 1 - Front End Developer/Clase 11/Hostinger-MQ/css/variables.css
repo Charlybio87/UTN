@@ -12,12 +12,12 @@
     --desktop: 1050px;
 
     /* Card */
-    --img-1050: 768px;
-    --img-650: 768px;
-    --img-320: 768px;
-    --card-1050:768px;
-    --card-650:768px;
-    --card-320:768px;
+    --img-1050: 688px;
+    --img-650: 508px;
+    --img-320: 288px;
+    --card-1050:688px;
+    --card-650:508px;
+    --card-320:288px;
     /* Fuentes */
 
     /* Separaciones */
