@@ -1,0 +1,293 @@
+/**
+Info Adicional dimension de pantalla 1680px x 1050px*/
+body{
+    width: 100%;
+    height: 300vh;
+    background-color: #121212;
+}
+
+aside {
+    display: flex;
+    flex-direction: column;
+    gap: 4.5px;
+    margin: 10px;
+    cursor: pointer; 
+}
+aside .sidebar {
+    width: 343.328px;
+    height: 620.25px;
+    padding: 9px;
+    border: 1px solid black;
+    border-radius: .5rem;
+    background-color: #232329;
+    display: flex;
+    flex-direction: column;
+
+    position: fixed;
+}
+aside .icons {
+    width: 40.5px;
+    height: 40.5px;
+    padding: 11.25px;
+    box-shadow: 0 0 0 1px #121212;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    background-color: #232329;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: fixed;
+    cursor: pointer;
+}
+aside .icons i {
+    width: 18px;
+    height: 18px;
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sider-up {
+    width: 310px;
+    display: flex;
+    flex-direction: column;
+}
+.sider-up-3box {
+    display: flex;
+    flex-direction: row;
+}
+.sider-up-3box_textder {
+    width: 325.33px;
+    height: 36px;
+    padding: 0 11.25px;
+    border: 1px solid transparent;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: .7rem;
+}
+.sider-up-2box {
+    width: 325.33px;
+    height: 36px;
+    padding: 0 11.25px;
+    border: 1px solid transparent;
+    font-size: .875rem;
+    font: 15.75px;
+    font-weight: 400;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: .7rem;
+}
+.aside_separador {
+    width: 325.33px;
+    height: 1px;
+    background-color: #31303B;
+    margin: 9px 0px;
+}
+
+.sider-med-2box {
+    width: 325.33px;
+    height: 36px;
+    padding: 0 11.25px;
+    border: 1px solid transparent;
+    align-items: center;
+    height: 2rem;
+    font-size: .875rem;
+    font: 15.75px;
+    font-weight: 400;
+    display: flex;
+    flex-direction: row;
+    gap: .625rem;
+}
+
+.sider-down-theme {
+    width: 325.33px;
+    height: 36px;
+    padding: 0 11.25px;
+    border: 1px solid transparent;
+    align-items: center;
+    height: 2rem;
+    gap: .625rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.sider-down-3box {
+    width: 96px;
+    height: 30px;
+    padding: 3px;
+    border: 1px solid #31303B;
+    border-radius: 8px;
+    font-size: .875rem;
+    font: 15.75px;
+    /* column-gap: .625rem; */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.sider-down-icons {
+    width: 32px;
+    height: 24px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    font-size: 15.33px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sider-down-idioma {
+    width: 325.33px;
+    height: 36px;
+    margin: 9px 0 0;
+    padding: 0 11.25px;
+    display: flex;
+    font-weight: 400;
+    color: #e3e3e8;;
+    border-radius: 10px;
+    border-top-left-radius: 10px;
+}
+.sider-down-idioma-list {
+    width: 302.83px;
+    height: 36px;
+    padding: 0px 27px 0 9px;
+    background: #232329;
+    color: #e3e3e8;
+    background-size: 9.36px;
+    border: 1px solid #31303b;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.sider-down-lienzo {
+    width: 325.33px;
+    height: 66.25px;
+    margin: 9px 0 0;
+    color: rgb(227, 227, 232);
+
+}
+.sider-down-lienzo-titulo {
+    width: 325.33px;
+    height: 19px;
+    color: #e3e3e8;
+    font: 15px;
+    margin: 0 0 9px;
+}
+
+.sider-down-icons_color {
+    width: 325.33px;
+    height: 38.25px;
+    padding: 0 11.25px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.icons-color-flex {
+    width: 253.58px;
+    height: 24.3px;
+    color:rgb(227, 227, 232);
+    display: flex;
+    justify-content: space-between;
+}
+.icons-color {
+    width: 26.3px;
+    height: 26.3px;
+    border: 1px solid #31303B;
+    border-radius: 0.25rem;
+    /* box-shadow: rgb(190, 185, 255) 0px 0px 0px 1px; */
+}
+.separador-icons {
+    width: 1px;
+    height: 29.50px;
+    color: rgb(227, 227, 232);
+    background-color: rgb(49,48,59);
+}
+.icons-color-flex button:nth-child(1) {
+    background-color: #121212;
+}
+.icons-color-flex button:nth-child(2) {
+    background-color: #161718;
+}
+.icons-color-flex button:nth-child(3) {
+    background-color: #13171c;
+}
+.icons-color-flex button:nth-child(4) {
+    background-color: #181605;
+}
+.icons-color-flex button:nth-child(5) {
+    background-color: #1b1615;
+    }
+
+.icons-selec {
+    background-color: #121212;
+    width: 29.52px;
+    height: 29.52px;
+    display: flex;
+    align-items: flex-start;
+}
+.bi {
+    color:#d6d6d6;
+}
+p {
+    color: #e3e3e8;
+}
+._atajo {
+    color: #6e6d72;
+    display: flex;
+    align-items: center;
+}
+._atajo-especial {
+    font-weight: 700;
+    color: #666489;
+    display: flex;
+    align-items: center;
+}
+._text-especial {
+    font-weight: 700;
+    color:#9e9ce5;
+}
+.sider-up-3box:hover {
+    background-color: rgb(49,48,59);
+    border-radius: 4px;
+}
+.sider-up-2box:hover {
+    background-color: rgb(49,48,59);
+    border-radius: 4px;
+}
+.sider-med-2box:hover {
+    background-color: rgb(49,48,59);
+    border-radius: 4px;
+}
+.sider-down-idioma-list:focus-visible {
+    outline: none;
+}
+.sider-down-icons i:hover {
+    color: #6965DB;
+    font-size: 18px;
+    padding: 3px;
+    outline: none;
+} 
+.icons-color-flex button:focus {
+    border:1px solid #6965DB;
+    /* font-size: 30px;
+    padding: 30px; */
+    outline: none;
+}
+
+/*----------- Mostrar/Ocultar Navegador  ----------*/
+
+.sidebar {
+    top: -700px;
+	left: 0;
+}
+.icons:focus + .sidebar {
+    top: 55px;
+    left: 10px;
+}
+
+/*---------------------*/
