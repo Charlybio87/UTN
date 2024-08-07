@@ -16,7 +16,7 @@ if(operacion === '+'){
 alert("Bienvenido al Multiplicador Web!!")
 
 let numero1 = Number(prompt("Ingrese el primer número: "))
-while (isNaN(numero1)||numero1 =='') {
+while (!numero1||isNaN(numero1)/*||numero1 ==''*/) {
     alert("❗ Error: Debe ingresar un número")
     numero1 = Number(prompt("Ingrese el primer número: "))
 }

@@ -281,13 +281,28 @@ p {
 
 /*----------- Mostrar/Ocultar Navegador  ----------*/
 
-.sidebar {
+/* .sidebar {
     top: -700px;
 	left: 0;
 }
 .icons:focus + .sidebar {
     top: 55px;
     left: 10px;
-}
+} */
 
+/* Hide the checkbox */
+#menu-toggle {
+    display: none;
+}
+  /* Sidebar Styles */
+.sidebar {
+    top: -700px;
+    left: 0;
+    position: fixed;
+}
+  /* Show sidebar when checkbox is checked */
+#menu-toggle:checked + .icons + .sidebar {
+    top: 55px;
+    left: 10px;
+}
 /*---------------------*/

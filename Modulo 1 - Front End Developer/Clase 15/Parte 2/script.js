@@ -35,13 +35,13 @@
 // sumarMas2(10,100);
 // sumarMas2(256,24);
 
-function calculoiva(precio){
+function calculoIva(precio){
     let iva = 0.21
     let total = precio + (precio * iva)
     return(total)    
 }
 let precio = Number(prompt('Ingrese el precio del producto: '))
-total = calculoiva(precio)
+total = calculoIva(precio)
 
 alert(`El precio total es: ` + total)
 
