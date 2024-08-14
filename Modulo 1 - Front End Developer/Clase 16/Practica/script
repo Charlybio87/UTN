@@ -85,15 +85,16 @@ function calcular(operador,num1,num2){
     if (operador === '+') {
         // resultado = parseInt(num1) + parseInt(num2)
         resultado = num1 + num2
-        return (resultado)
+        
     } else if (operador === '*') {
         resultado = num1 * num2
-        return (resultado)
+        
     } else if ((operador === '-')) {
         resultado = num1 - num2
-        return (resultado)
+        
     } else {
         resultado = num1 / num2
-        return (resultado)
+        
     }
+    return (resultado)
 }
