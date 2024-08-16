@@ -30,23 +30,35 @@
 
 
 /*Metodos de Arrays*/
-const nombres = ['Juanito']
+// const nombres = ['Juanito']
 
-let nombre = prompt('Ingresa el nombre: ')
-nombres.push(nombre)
-console.log(nombres)
+// let nombre = prompt('Ingresa el nombre: ')
+// nombres.push(nombre)
+// console.log(nombres)
 
-nombre = prompt('Ingresa el nombre: ')
-nombres.unshift(nombre)
+// nombre = prompt('Ingresa el nombre: ')
+// nombres.unshift(nombre)
+// console.log(nombres);
+
+// nombres.pop()
+// console.log(nombres);
+
+// nombres.shift()
+// console.log(nombres);
+
+// console.log(nombres.includes('Juanito'));
+
+// nombres = ['pepe','maria','pedro','juan']
+// console.log(nombres);
+
+// let posicionMaria = nombres.indexOf('maria')
+
+// nombres.splice(posicionMaria, 1)
+// console.log(nombres);
+
+const nombres = ['pedro','maria']
+
+const posicionMaria = nombres.indexOf('maria')
+nombres.splice(posicionMaria,0,'juan','carlitos')
 console.log(nombres);
-
-nombres.pop()
-console.log(nombres);
-
-nombres.shift()
-console.log(nombres);
-
-console.log(nombres.includes('Juanito'));
-
-
-
+// que son los objetos?

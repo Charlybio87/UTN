@@ -26,7 +26,6 @@
 
 alert("Ingresar Array se devuelve un string:")
 const palabra = ['c','h','a','r','l','y']
-let concatenar = ''
 
 console.log(palabra);
 
@@ -34,6 +33,7 @@ alert("Array: " + "['c','h','a','r','l','y']")
 alert("String: '" + devolverString(palabra) + "'")
 
 function devolverString(palabra) {
+    let concatenar = ''
     for(let letra of palabra){
         concatenar = concatenar + letra
         console.log(concatenar);
@@ -49,7 +49,6 @@ function devolverString(palabra) {
 
 alert("Ingresar Array se devuelve mayor número:")
 const numeros = [1,2,10,1000,15,345]
-let mayor = 0
 
 console.log(numeros);
 
@@ -57,6 +56,7 @@ alert("Array: [1,2,10,1000,15,345]")
 alert("El mayor número del Array es: " + devolverMayor(numeros))
 
 function devolverMayor(numeros) {
+    let mayor = 0
     for(let num of numeros){
         console.log(num)
         if (num > mayor){
