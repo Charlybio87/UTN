@@ -7,33 +7,37 @@
 // }
 
 const nombres = ['Juan','María','Pedro','Juan','Sofía','Luis','María','Ana','Pedro','Juan','Sofía','Carlos','Luis','Ana','María','Pedro','Sofía','Juan','Luis','Ana'];
+let cantidad
 
 let nombre = 'Juan'
 nombreAElimimar(nombres, nombre)
 console.log(`1° Listado:
     ${nombres}
-    se elimino el nombre: ${nombre}`)
+    se elimino el nombre: ${nombre} ${cantidad} veces.`)
 
 nombre = 'Carlos'
 nameToDelete(nombres,nombre)
 console.log(`2° Listado:
     ${nombres}
-    se elimino el nombre: ${nombre}`)
+    se elimino el nombre: ${nombre} ${cantidad} veces.`)
 // for (let i = 0; i < nombres.length; i++) {
 //     console.log(`  ${nombres[i]}`);
 // }
 
 
 function nameToDelete(nombres,nombre){
+    cantidad = 0
     for (let i = 0; i < nombres.length; i++) {
         if (nombres[i] === nombre) {
             nombres.splice(nombres.indexOf(nombre),1)
+            cantidad++
         }
     }
-    return (nombres)
+    return (nombres,cantidad)
 }
 
 function nombreAElimimar(nombres,nombre) {
+    cantidad = 0
     // for (const nombre  of nombres) {
     //     console.log(nombre);
     //     if (nameToDelete === nombre) {
@@ -45,7 +49,8 @@ function nombreAElimimar(nombres,nombre) {
     // }
     while (nombres.includes(nombre)) {
         nombres.splice(nombres.indexOf(nombre),1)
+        cantidad++
     }
-    return (nombres)
+    return (nombres,cantidad)
 }
 
