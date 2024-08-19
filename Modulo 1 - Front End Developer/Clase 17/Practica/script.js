@@ -8,6 +8,8 @@
 
 const nombres = ['Juan','María','Pedro','Juan','Sofía','Luis','María','Ana','Pedro','Juan','Sofía','Carlos','Luis','Ana','María','Pedro','Sofía','Juan','Luis','Ana'];
 let cantidad
+console.log(nombres);
+
 
 let nombre = 'Juan'
 nombreAElimimar(nombres, nombre)
