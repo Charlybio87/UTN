@@ -3,7 +3,8 @@
 
 const buttonIncrem = document.getElementById('btn-incrementar')
 const buttonDecrem = document.getElementById('btn-decrementar')
-const spanContador = document.getElementById('contador-text')
+const spanContador = document.getElementsByClassName('contador-text')
+console.log(spanContador)
 const spanError = document.getElementById('error-text')
 
 /** addEventListener
