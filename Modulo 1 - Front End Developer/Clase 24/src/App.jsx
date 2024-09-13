@@ -1,6 +1,9 @@
 import React, { useState } from 'react'
+import { LoadingView, ErrorView } from './Components/status'
+import './style/app.css'
 
-function App() {
+
+export default function App() {
 
   // let navegador_abierto = true
   // let navegador_desplegado = null
@@ -15,13 +18,20 @@ function App() {
   //Operador Ternario
   let navegador_abierto = false
   let userRol = 'Premiun'
-
+  
   let cargando = false
   let status = 'Error'
 
-  let compartiendo = true
-  let cargando_vista = false 
-  let comparte = null //'Charly'
+  // let compartiendo = true
+  // let cargando_vista = true 
+  // let comparte = 'Charly' //'Charly'
+  const user = {
+    name: 'Charly',
+    aliasX: '_CarlosARibas',
+    imageUrl:'https://i.imgur.com/yXOvdOSs.jpg',
+    compartiendo: true,
+    cargando_vista: true,
+  }
 
   let estaRegistrando = false
   let inicioSeccion = true
@@ -78,16 +88,17 @@ function App() {
               : <h3>Error</h3>
             )
         }
+        <hr />
       </div>
       <div>
       {
-        !compartiendo 
-        ? <div>Nadie Comparte</div>
-          : ( cargando_vista
-              ? <div>{`Comparte ${comparte}`}</div>
-              : ( comparte === null
-                ? <div>Nadie Comparte</div>
-                : <div>cargando...</div>
+        !user.name 
+        ? <div>Nadie Comparte.</div>
+          : ( user.compartiendo === true 
+              ? <LoadingView nombre={user.name} imagen={user.aliasX} />
+              : ( !user.cargando_vista
+                ? <div>{user.name} no esta comparte vista.</div>
+                : <ErrorView nombre={user.name} />
                 )
             )
       }
@@ -113,4 +124,19 @@ function App() {
   )
 }
 
-export default App
+// function LoadingView(props) {
+//   return(
+//     <>
+//       <img src={`${props.imagen}`} alt="imagenUser" />
+//       <h2>Cargando vista de {props.nombre}</h2>
+//     </>
+//   )
+// }
+// const ErrorView = (props) => {
+// 	return (
+// 		<>
+// 			<h2>Error al compartir vista {props.nombre}</h2>
+// 			<span>Internal Server Error</span>
+// 		</>
+// 	)
+// }
