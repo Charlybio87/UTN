@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { LoadingView, ErrorView } from './Components/status'
 import './style/app.css'
+import Carrito from './Components/counter'
 
 
 export default function App() {
@@ -27,7 +28,7 @@ export default function App() {
   // let comparte = 'Charly' //'Charly'
   const user = {
     name: 'Charly',
-    aliasX: '_CarlosARibas',
+    aliasX: 'midudev',
     imageUrl:'https://i.imgur.com/yXOvdOSs.jpg',
     compartiendo: true,
     cargando_vista: true,
@@ -45,18 +46,20 @@ export default function App() {
 
   const [contador, setContador] = useState(0)
   function incrementar () {
-    console.log(contador);
+    //console.log(contador);
     return(
       setContador(contador + 1)
     )
   }
   function decrementar() {
-    console.log(contador);
+    //console.log(contador);
     return(
       setContador(contador - 1)
     )
   }
 
+  console.log(contador)
+  
   return (
     <>
       <h1>Estados y Eventos</h1>
@@ -95,10 +98,15 @@ export default function App() {
         !user.name 
         ? <div>Nadie Comparte.</div>
           : ( user.compartiendo === true 
-              ? <LoadingView nombre={user.name} imagen={user.aliasX} />
+              ? <LoadingView 
+                nombre={user.name} 
+                imagen={user.aliasX} 
+                />
               : ( !user.cargando_vista
                 ? <div>{user.name} no esta comparte vista.</div>
-                : <ErrorView nombre={user.name} />
+                : <ErrorView 
+                  nombre={user.name} 
+                  />
                 )
             )
       }
@@ -119,6 +127,9 @@ export default function App() {
         <button onClick={decrementar}>-</button>
         <span>{contador}</span>
         <button onClick={incrementar}>+</button>
+      </div>
+      <div>
+        <Carrito/>
       </div>
     </>
   )
