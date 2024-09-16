@@ -7,12 +7,12 @@ export function NavToggle() {
   function menu() { // Componente separado
     return(
       <ul>
-        <ol>Option 1</ol>
-        <ol>Option 2</ol>
-        <ol>Option 3</ol>
-        <ol>Option 4</ol>
-        <ol>Option 5</ol>
-        <ol>Option 6</ol>
+        <ol><a href="#">Option 1</a></ol>
+        <ol><a href="#">Option 2</a></ol>
+        <ol><a href="#">Option 3</a></ol>
+        <ol><a href="#">Option 4</a></ol>
+        <ol><a href="#">Option 5</a></ol>
+        <ol><a href="#">Option 6</a></ol>
       </ul>
     )
   }
