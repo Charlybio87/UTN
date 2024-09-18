@@ -1,0 +1,51 @@
+.App {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+}
+.App section {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.App aside {
+  width: 233px;
+  height: 100vh ;
+  background-color: #171717;
+  display: flex;
+  flex-direction: column;
+  padding: 0 13.5px;
+
+}
+.App .sidebar_medio {
+  width: 200px;
+  height: 500px;
+  margin-top: 22.5px;
+  padding-bottom: 9px;
+  display: flex;
+  flex-direction:column;
+}
+.chatHistory .timestamp {
+  height: 30px;
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  font-weight: bold;
+}
+.chatHistory .titulo{
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 50px;
+}
+.chatHistory .chat-respuesta{
+  display: flex;
+  flex-direction: column;
+  padding: 9px 0;
+}
+span {
+  font-weight: bold;
+  text-transform: capitalize;
+}
