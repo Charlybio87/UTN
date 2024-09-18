@@ -1,5 +1,5 @@
-import { GiArrowsShield as ShieldIcon, GiApc as TankIcon} from "react-icons/gi";
+import { GiBiohazard as BioIcon,GiAngularSpider as SpiderIcon,GiArrowsShield as ShieldIcon, GiApc as TankIcon} from "react-icons/gi";
 
 
 
-export {ShieldIcon, TankIcon}
+export {ShieldIcon, TankIcon, BioIcon,SpiderIcon}

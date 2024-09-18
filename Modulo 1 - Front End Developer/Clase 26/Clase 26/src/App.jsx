@@ -4,6 +4,7 @@ import { Link, Route, Routes } from 'react-router-dom'
 import HomePage from './Pages/HomePage'
 import ContactPage from './Pages/ContactPage'
 import ErrorPage from './Pages/ErrorPage'
+import { SpiderIcon } from './Icons'
 
 
 function App() {
@@ -12,7 +13,7 @@ function App() {
   return (
     <>
       <header>
-        <h2>Nombre marca</h2>
+        <h2> <SpiderIcon/> TelaAraña</h2>
         <nav>
           <Link to={'/contact'}>Ir a contacto</Link>
           <br />
