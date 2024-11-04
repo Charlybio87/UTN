@@ -1,4 +1,4 @@
-CREATE TABLE producto_2 (
+CREATE TABLE producto (
 	id INT AUTO_INCREMENT PRIMARY KEY,
   nombre VARCHAR(30) NOT NULL,
   descripcion VARCHAR(100) NOT NULL,
