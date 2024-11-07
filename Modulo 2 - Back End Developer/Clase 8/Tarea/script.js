@@ -23,7 +23,7 @@ var Accion = /** @class */ (function () {
         this.fecha = fecha;
     }
     Accion.prototype.mostrarDetalle = function () {
-        console.log("ID: ".concat(this.id, ", Descripcion: ").concat(this.descripcion, ", Fecha: ").concat(this.fecha));
+        return ("\n      ID: ".concat(this.id, ", \n      Descripcion: ").concat(this.descripcion, ", \n      Fecha: ").concat(this.fecha));
     };
     return Accion;
 }());
@@ -34,7 +34,7 @@ var Cambio = /** @class */ (function () {
         this.nuevo_valor = nuevo_valor;
     }
     Cambio.prototype.mostrarCambio = function () {
-        console.log("ID Cambio: ".concat(this.id_cambio, ", \n      Valor Anterior: ").concat(this.valor_anterio, ",\n      Nuevo Valor: ").concat(this.nuevo_valor));
+        return ("\n      ID Cambio: ".concat(this.id_cambio, ",\n      Valor Anterior: ").concat(this.valor_anterio, " => Valor Nuevo: ").concat(this.nuevo_valor));
     };
     return Cambio;
 }());
@@ -42,13 +42,14 @@ var Cambio = /** @class */ (function () {
 var AccionInicioSesion = /** @class */ (function (_super) {
     __extends(AccionInicioSesion, _super);
     function AccionInicioSesion(id, descripcion, fecha, dispositivo_origen) {
-        var _this = _super.call(this, id, descripcion, fecha) || this;
-        _this.dispositivo_origen = dispositivo_origen;
+        var _this = _super.call(this, id, descripcion, fecha) || this; // palabra clave super(), permite que hereden las propiedades id, descripcion y fecha
+        _this.dispositivo_origen = dispositivo_origen; // propiedad adicional
         return _this;
     }
+    // Polimorfismo
     AccionInicioSesion.prototype.mostrarDetalle = function () {
-        _super.prototype.mostrarDetalle.call(this);
-        console.log("Dispositivo Origen:".concat(this.dispositivo_origen, "."));
+        var mostrarInfo = _super.prototype.mostrarDetalle.call(this); // muestra detalles de la clase base (padre)
+        return ("".concat(mostrarInfo, ",\n      Dispositivo Origen:").concat(this.dispositivo_origen, ".")); // incluye detalles especificos de esa accion clase derivada (hija)
     };
     return AccionInicioSesion;
 }(Accion));
@@ -61,8 +62,8 @@ var AccionCierreSesion = /** @class */ (function (_super) {
         return _this;
     }
     AccionCierreSesion.prototype.mostrarDetalle = function () {
-        _super.prototype.mostrarDetalle.call(this);
-        console.log("Dispositivo Origen:".concat(this.dispositivo_origen, ", Tiempo de Sesion:").concat(this.tiempo_de_sesion, " minutos."));
+        var mostrarInfo = _super.prototype.mostrarDetalle.call(this);
+        return ("\n      ".concat(mostrarInfo, ", \n      Dispositivo Origen:").concat(this.dispositivo_origen, ", \n      Tiempo de Sesion:").concat(this.tiempo_de_sesion, " minutos."));
     };
     return AccionCierreSesion;
 }(Accion));
@@ -74,9 +75,16 @@ var AccionActualizacionPerfil = /** @class */ (function (_super) {
         return _this;
     }
     AccionActualizacionPerfil.prototype.mostrarDetalle = function () {
-        _super.prototype.mostrarDetalle.call(this);
-        console.log("Cambios:");
-        this.cambios.forEach(function (cambio) { return cambio.mostrarCambio(); });
+        var mostrarInfo = _super.prototype.mostrarDetalle.call(this); // Muestra los detalles básicos de la acción
+        var cambiosDetalles = this.cambios.map(function (cambio) { return cambio.mostrarCambio(); }).join(', '); // Itera sobre cada cambio y muestra sus detalles
+        return ("\n      ".concat(mostrarInfo, ", \n      Cambios: ").concat(cambiosDetalles));
+        // this.cambios.map(cambio => cambio.mostrarCambio());
+        // for (const cambio of this.cambios) {
+        //  cambio.mostrarCambio();
+        // }
+        // this.cambios.forEach(cambio => {
+        //  cambio.mostrarCambio();
+        // });
     };
     return AccionActualizacionPerfil;
 }(Accion));
@@ -89,8 +97,8 @@ var AccionCompra = /** @class */ (function (_super) {
         return _this;
     }
     AccionCompra.prototype.mostrarDetalle = function () {
-        _super.prototype.mostrarDetalle.call(this);
-        console.log("Productos: ".concat(this.productos.join(', '), ", Total: $").concat(this.total));
+        var mostrarInfo = _super.prototype.mostrarDetalle.call(this);
+        return ("".concat(mostrarInfo, ",\n        Productos: ").concat(this.productos.join(', '), ",\n        Total: $").concat(this.total));
     };
     return AccionCompra;
 }(Accion));
@@ -104,8 +112,8 @@ var AccionEnvioMensaje = /** @class */ (function (_super) {
         return _this;
     }
     AccionEnvioMensaje.prototype.mostrarDetalle = function () {
-        _super.prototype.mostrarDetalle.call(this);
-        console.log("Destinatario: ".concat(this.destinatario, ", Mensaje: ").concat(this.mensaje));
+        var mostrarInfo = _super.prototype.mostrarDetalle.call(this);
+        return ("".concat(mostrarInfo, ", \n        Destinatario: ").concat(this.destinatario, ", \n        Mensaje: ").concat(this.mensaje));
     };
     return AccionEnvioMensaje;
 }(Accion));
@@ -123,9 +131,13 @@ var Historial = /** @class */ (function () {
     Historial.prototype.eliminarTodo = function () {
         this.acciones = [];
     };
+    /**
+     * Usa map cuando necesites transformar un array y obtener un nuevo array con los resultados.
+     * Usa forEach cuando solo necesites ejecutar una función para cada elemento del array sin necesidad de un resultado acumulado.
+     * @returns nuevo array
+     */
     Historial.prototype.mostrarHistorial = function () {
-        console.log("Historial de Acciones:");
-        this.acciones.forEach(function (accion) { return accion.mostrarDetalle(); });
+        return this.acciones.map(function (accion) { return accion.mostrarDetalle(); }).join('\n');
     };
     return Historial;
 }());
@@ -148,14 +160,15 @@ historial.agregarAccion(accion3);
 historial.agregarAccion(accion4);
 historial.agregarAccion(accion5);
 // Mostrar el historial
-historial.mostrarHistorial();
+console.log("Historial de Acciones:");
+console.log(historial.mostrarHistorial());
 // Eliminar una acción por ID
 historial.eliminarAccionPorID(2); // Eliminar la acción de actualización de perfil
 // Mostrar el historial después de la eliminación
 console.log("\nHistorial después de eliminar la acción de actualización de perfil:");
-historial.mostrarHistorial();
+console.log(historial.mostrarHistorial());
 // Eliminar todo el historial
 historial.eliminarTodo();
 // Mostrar el historial después de eliminar todo
 console.log("\nHistorial después de eliminar todas las acciones:");
-historial.mostrarHistorial();
+console.log(historial.mostrarHistorial());

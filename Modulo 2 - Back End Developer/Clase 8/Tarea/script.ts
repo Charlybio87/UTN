@@ -3,7 +3,6 @@
  */
 
 class Accion {
-
   id: number
   descripcion: string
   fecha: Date
@@ -17,8 +16,12 @@ class Accion {
     this.descripcion = descripcion
     this.fecha = fecha
   }
-  mostrarDetalle() :void {
-    console.log(`ID: ${this.id}, Descripcion: ${this.descripcion}, Fecha: ${this.fecha}`)
+  mostrarDetalle() : string {
+    return (`
+      ID: ${this.id}, 
+      Descripcion: ${this.descripcion}, 
+      Fecha: ${this.fecha}`
+    )
   }
 }
 
@@ -36,10 +39,11 @@ class Cambio {
     this.valor_anterio = valor_anterio
     this.nuevo_valor = nuevo_valor    
   }
-  mostrarCambio(): void {
-    console.log(`ID Cambio: ${this.id_cambio}, 
-      Valor Anterior: ${this.valor_anterio},
-      Nuevo Valor: ${this.nuevo_valor}`);
+  mostrarCambio(): string {
+    return (`
+      ID Cambio: ${this.id_cambio},
+      Valor Anterior: ${this.valor_anterio} => Valor Nuevo: ${this.nuevo_valor}`
+    )
   }
 }
 
@@ -55,12 +59,16 @@ class AccionInicioSesion extends Accion{
 
     dispositivo_origen: string
   ){
-    super(id,descripcion,fecha)
-    this.dispositivo_origen = dispositivo_origen
+    super(id,descripcion,fecha) // palabra clave super(), permite que hereden las propiedades id, descripcion y fecha
+    this.dispositivo_origen = dispositivo_origen // propiedad adicional
   }
-  mostrarDetalle() : void {
-    super.mostrarDetalle()
-    console.log(`Dispositivo Origen:${this.dispositivo_origen}.`)
+  // Polimorfismo
+  mostrarDetalle() : string {
+    const mostrarInfo = super.mostrarDetalle() // muestra detalles de la clase base (padre)
+    return (
+      `${mostrarInfo},
+      Dispositivo Origen:${this.dispositivo_origen}.`
+    )// incluye detalles especificos de esa accion clase derivada (hija)
     }
 }
 class AccionCierreSesion extends Accion{
@@ -79,14 +87,18 @@ class AccionCierreSesion extends Accion{
     this.dispositivo_origen = dispositivo_origen
     this.tiempo_de_sesion = tiempo_de_sesion
   }
-  mostrarDetalle() : void {
-    super.mostrarDetalle()
-    console.log(`Dispositivo Origen:${this.dispositivo_origen}, Tiempo de Sesion:${this.tiempo_de_sesion} minutos.`)
-    }
+  mostrarDetalle() : string {
+    const mostrarInfo = super.mostrarDetalle()
+    return (`
+      ${mostrarInfo}, 
+      Dispositivo Origen:${this.dispositivo_origen}, 
+      Tiempo de Sesion:${this.tiempo_de_sesion} minutos.`
+    )
+  }
 }
 
 class AccionActualizacionPerfil extends Accion {
-  cambios: Cambio[]
+  cambios: Cambio[] // Composicion
 
   constructor(
     id: number,
@@ -99,11 +111,21 @@ class AccionActualizacionPerfil extends Accion {
     this.cambios = cambios
   }
 
-  mostrarDetalle(): void {
-    super.mostrarDetalle();
-    console.log(`Cambios:`);
-    this.cambios.forEach(cambio => cambio.mostrarCambio());
-}
+  mostrarDetalle(): string {
+    const mostrarInfo = super.mostrarDetalle() // Muestra los detalles básicos de la acción
+    const cambiosDetalles = this.cambios.map(cambio => cambio.mostrarCambio()).join(', ')// Itera sobre cada cambio y muestra sus detalles
+    return (`
+      ${mostrarInfo}, 
+      Cambios: ${cambiosDetalles}` 
+    )
+    // this.cambios.map(cambio => cambio.mostrarCambio());
+    // for (const cambio of this.cambios) {
+    //  cambio.mostrarCambio();
+    // }
+    // this.cambios.forEach(cambio => {
+    //  cambio.mostrarCambio();
+    // });
+  }
 }
 
 class AccionCompra extends Accion {
@@ -116,9 +138,13 @@ class AccionCompra extends Accion {
         this.total = total;
     }
 
-    mostrarDetalle(): void {
-        super.mostrarDetalle();
-        console.log(`Productos: ${this.productos.join(', ')}, Total: $${this.total}`);
+    mostrarDetalle(): string {
+      const mostrarInfo = super.mostrarDetalle()
+      return (
+        `${mostrarInfo},
+        Productos: ${this.productos.join(', ')},
+        Total: $${this.total}`
+      )
     }
 }
 
@@ -133,32 +159,43 @@ class AccionEnvioMensaje extends Accion {
         this.mensaje = mensaje;
     }
 
-    mostrarDetalle(): void {
-        super.mostrarDetalle();
-        console.log(`Destinatario: ${this.destinatario}, Mensaje: ${this.mensaje}`);
+    mostrarDetalle(): string {
+      const mostrarInfo = super.mostrarDetalle()
+      return (
+        `${mostrarInfo}, 
+        Destinatario: ${this.destinatario}, 
+        Mensaje: ${this.mensaje}`
+      )
     }
 }
 
 // Clase Historial
 class Historial {
-    acciones: Accion[] = [];
+    acciones: Accion[]
 
+    constructor() {
+      this.acciones = [];
+    }
     agregarAccion(accion: Accion): void {
-        this.acciones.push(accion);
+      this.acciones.push(accion);
     }
 
     eliminarAccionPorID(id: number): void {
-        this.acciones = this.acciones.filter(accion => accion.id !== id);
+      this.acciones = this.acciones.filter(accion => accion.id !== id);
     }
 
     eliminarTodo(): void {
-        this.acciones = [];
+      this.acciones = [];      
     }
-
-    mostrarHistorial(): void {
-        console.log(`Historial de Acciones:`);
-        this.acciones.forEach(accion => accion.mostrarDetalle());
+    /**
+     * Usa map cuando necesites transformar un array y obtener un nuevo array con los resultados.
+     * Usa forEach cuando solo necesites ejecutar una función para cada elemento del array sin necesidad de un resultado acumulado.
+     * @returns nuevo array 
+     */
+    mostrarHistorial(): string {
+      return this.acciones.map(accion => accion.mostrarDetalle()).join('\n');
     }
+    
 }
 
 // Ejemplo de uso
@@ -183,18 +220,19 @@ historial.agregarAccion(accion4);
 historial.agregarAccion(accion5);
 
 // Mostrar el historial
-historial.mostrarHistorial();
+console.log(`Historial de Acciones:`)
+console.log(historial.mostrarHistorial())
 
 // Eliminar una acción por ID
-historial.eliminarAccionPorID(2); // Eliminar la acción de actualización de perfil
+historial.eliminarAccionPorID(2) // Eliminar la acción de actualización de perfil
 
 // Mostrar el historial después de la eliminación
 console.log("\nHistorial después de eliminar la acción de actualización de perfil:");
-historial.mostrarHistorial();
+console.log(historial.mostrarHistorial())
 
 // Eliminar todo el historial
-historial.eliminarTodo();
+historial.eliminarTodo()
 
 // Mostrar el historial después de eliminar todo
 console.log("\nHistorial después de eliminar todas las acciones:");
-historial.mostrarHistorial();
+console.log(historial.mostrarHistorial())
