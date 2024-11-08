@@ -17,14 +17,16 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 var Accion = /** @class */ (function () {
-    function Accion(id, descripcion, fecha) {
-        this.id = id;
+    function Accion(descripcion, fecha) {
+        Accion.contador++;
+        this.id = Accion.contador;
         this.descripcion = descripcion;
         this.fecha = fecha;
     }
     Accion.prototype.mostrarDetalle = function () {
-        return ("\n      ID: ".concat(this.id, ", \n      Descripcion: ").concat(this.descripcion, ", \n      Fecha: ").concat(this.fecha));
+        return ("\n      ID: ".concat(this.id, " \n      Descripcion: ").concat(this.descripcion, "\n      Fecha: ").concat(this.fecha));
     };
+    Accion.contador = 0;
     return Accion;
 }());
 var Cambio = /** @class */ (function () {
@@ -34,50 +36,50 @@ var Cambio = /** @class */ (function () {
         this.nuevo_valor = nuevo_valor;
     }
     Cambio.prototype.mostrarCambio = function () {
-        return ("\n      ID Cambio: ".concat(this.id_cambio, ",\n      Valor Anterior: ").concat(this.valor_anterio, " => Valor Nuevo: ").concat(this.nuevo_valor));
+        return ("\n          ID Cambio: ".concat(this.id_cambio, "\n          Valor Anterior: ").concat(this.valor_anterio, " => Valor Nuevo: ").concat(this.nuevo_valor));
     };
     return Cambio;
 }());
 //clases derivadas son una extensión de la clase base
 var AccionInicioSesion = /** @class */ (function (_super) {
     __extends(AccionInicioSesion, _super);
-    function AccionInicioSesion(id, descripcion, fecha, dispositivo_origen) {
-        var _this = _super.call(this, id, descripcion, fecha) || this; // palabra clave super(), permite que hereden las propiedades id, descripcion y fecha
+    function AccionInicioSesion(descripcion, fecha, dispositivo_origen) {
+        var _this = _super.call(this, descripcion, fecha) || this; // palabra clave super(), permite que hereden las propiedades id, descripcion y fecha
         _this.dispositivo_origen = dispositivo_origen; // propiedad adicional
         return _this;
     }
     // Polimorfismo
     AccionInicioSesion.prototype.mostrarDetalle = function () {
-        var mostrarInfo = _super.prototype.mostrarDetalle.call(this); // muestra detalles de la clase base (padre)
-        return ("".concat(mostrarInfo, ",\n      Dispositivo Origen:").concat(this.dispositivo_origen, ".")); // incluye detalles especificos de esa accion clase derivada (hija)
+        var mostrarInfo = _super.prototype.mostrarDetalle.call(this); // muestra detalles de la propiedad de la clase base (padre)
+        return ("".concat(mostrarInfo, "\n        Dispositivo Origen: ").concat(this.dispositivo_origen, ".")); // incluye detalles especificos de esa accion clase derivada (hija)
     };
     return AccionInicioSesion;
 }(Accion));
 var AccionCierreSesion = /** @class */ (function (_super) {
     __extends(AccionCierreSesion, _super);
-    function AccionCierreSesion(id, descripcion, fecha, dispositivo_origen, tiempo_de_sesion) {
-        var _this = _super.call(this, id, descripcion, fecha) || this;
+    function AccionCierreSesion(descripcion, fecha, dispositivo_origen, tiempo_de_sesion) {
+        var _this = _super.call(this, descripcion, fecha) || this;
         _this.dispositivo_origen = dispositivo_origen;
         _this.tiempo_de_sesion = tiempo_de_sesion;
         return _this;
     }
     AccionCierreSesion.prototype.mostrarDetalle = function () {
         var mostrarInfo = _super.prototype.mostrarDetalle.call(this);
-        return ("\n      ".concat(mostrarInfo, ", \n      Dispositivo Origen:").concat(this.dispositivo_origen, ", \n      Tiempo de Sesion:").concat(this.tiempo_de_sesion, " minutos."));
+        return ("".concat(mostrarInfo, " \n        Dispositivo Origen: ").concat(this.dispositivo_origen, " \n        Tiempo de Sesion: ").concat(this.tiempo_de_sesion, " minutos."));
     };
     return AccionCierreSesion;
 }(Accion));
 var AccionActualizacionPerfil = /** @class */ (function (_super) {
     __extends(AccionActualizacionPerfil, _super);
-    function AccionActualizacionPerfil(id, descripcion, fecha, cambios) {
-        var _this = _super.call(this, id, descripcion, fecha) || this;
+    function AccionActualizacionPerfil(descripcion, fecha, cambios) {
+        var _this = _super.call(this, descripcion, fecha) || this;
         _this.cambios = cambios;
         return _this;
     }
     AccionActualizacionPerfil.prototype.mostrarDetalle = function () {
         var mostrarInfo = _super.prototype.mostrarDetalle.call(this); // Muestra los detalles básicos de la acción
         var cambiosDetalles = this.cambios.map(function (cambio) { return cambio.mostrarCambio(); }).join(', '); // Itera sobre cada cambio y muestra sus detalles
-        return ("\n      ".concat(mostrarInfo, ", \n      Cambios: ").concat(cambiosDetalles));
+        return ("".concat(mostrarInfo, " \n        Cambios: ").concat(cambiosDetalles));
         // this.cambios.map(cambio => cambio.mostrarCambio());
         // for (const cambio of this.cambios) {
         //  cambio.mostrarCambio();
@@ -90,30 +92,30 @@ var AccionActualizacionPerfil = /** @class */ (function (_super) {
 }(Accion));
 var AccionCompra = /** @class */ (function (_super) {
     __extends(AccionCompra, _super);
-    function AccionCompra(id, descripcion, fecha, productos, total) {
-        var _this = _super.call(this, id, descripcion, fecha) || this;
+    function AccionCompra(descripcion, fecha, productos, total) {
+        var _this = _super.call(this, descripcion, fecha) || this;
         _this.productos = productos;
         _this.total = total;
         return _this;
     }
     AccionCompra.prototype.mostrarDetalle = function () {
         var mostrarInfo = _super.prototype.mostrarDetalle.call(this);
-        return ("".concat(mostrarInfo, ",\n        Productos: ").concat(this.productos.join(', '), ",\n        Total: $").concat(this.total));
+        return ("".concat(mostrarInfo, "\n        Productos: ").concat(this.productos.join(', '), "\n        Total: $").concat(this.total));
     };
     return AccionCompra;
 }(Accion));
 // Clase derivada AccionEnvioMensaje
 var AccionEnvioMensaje = /** @class */ (function (_super) {
     __extends(AccionEnvioMensaje, _super);
-    function AccionEnvioMensaje(id, descripcion, fecha, destinatario, mensaje) {
-        var _this = _super.call(this, id, descripcion, fecha) || this;
+    function AccionEnvioMensaje(descripcion, fecha, destinatario, mensaje) {
+        var _this = _super.call(this, descripcion, fecha) || this;
         _this.destinatario = destinatario;
         _this.mensaje = mensaje;
         return _this;
     }
     AccionEnvioMensaje.prototype.mostrarDetalle = function () {
         var mostrarInfo = _super.prototype.mostrarDetalle.call(this);
-        return ("".concat(mostrarInfo, ", \n        Destinatario: ").concat(this.destinatario, ", \n        Mensaje: ").concat(this.mensaje));
+        return ("".concat(mostrarInfo, " \n        Destinatario: ").concat(this.destinatario, "\n        Mensaje: ").concat(this.mensaje));
     };
     return AccionEnvioMensaje;
 }(Accion));
@@ -136,23 +138,32 @@ var Historial = /** @class */ (function () {
      * Usa forEach cuando solo necesites ejecutar una función para cada elemento del array sin necesidad de un resultado acumulado.
      * @returns nuevo array
      */
-    Historial.prototype.mostrarHistorial = function () {
-        return this.acciones.map(function (accion) { return accion.mostrarDetalle(); }).join('\n');
+    Historial.prototype.mostrarHistorial = function (id) {
+        if (id) {
+            this.acciones.forEach(function (accion) {
+                if (accion.id === id) {
+                    return console.log(accion.mostrarDetalle());
+                }
+            });
+        }
+        else {
+            return console.log(this.acciones.map(function (accion) { return accion.mostrarDetalle(); }).join('\n'));
+        }
     };
     return Historial;
 }());
-// Ejemplo de uso
+//Implementacion del Ejemplo de uso:
 var historial = new Historial();
-// Crear acciones
-var accion1 = new AccionInicioSesion(1, "Usuario inició sesión", new Date("2024-08-31T12:00:00Z"), "PC de Escritorio");
 var cambios = [
     new Cambio(1, "correo@viejo.com", "correo@nuevo.com"),
     new Cambio(2, "1234", "5678")
 ];
-var accion2 = new AccionActualizacionPerfil(2, "Usuario actualizó su perfil", new Date("2024-08-31T12:05:00Z"), cambios);
-var accion3 = new AccionCierreSesion(3, "Usuario cerró sesión", new Date("2024-08-31T12:30:00Z"), "PC de Escritorio", 30);
-var accion4 = new AccionCompra(4, "Usuario realizó una compra", new Date("2024-08-31T12:45:00Z"), ["Laptop", "Ratón"], 1500);
-var accion5 = new AccionEnvioMensaje(5, "Usuario envió un mensaje", new Date("2024-08-31T13:00:00Z"), "admin@example.com", "Hola, necesito ayuda con mi cuenta.");
+// Crear acciones
+var accion1 = new AccionInicioSesion("Usuario inició sesión", new Date(), "PC de Escritorio");
+var accion2 = new AccionActualizacionPerfil("Usuario actualizó su perfil", new Date(), cambios);
+var accion3 = new AccionCierreSesion("Usuario cerró sesión", new Date(), "PC de Escritorio", 30);
+var accion4 = new AccionCompra("Usuario realizó una compra", new Date(), ["Laptop", "Ratón"], 1500);
+var accion5 = new AccionEnvioMensaje("Usuario envió un mensaje", new Date(), "admin@example.com", "Hola, necesito ayuda con mi cuenta.");
 // Agregar acciones al historial
 historial.agregarAccion(accion1);
 historial.agregarAccion(accion2);
@@ -161,14 +172,14 @@ historial.agregarAccion(accion4);
 historial.agregarAccion(accion5);
 // Mostrar el historial
 console.log("Historial de Acciones:");
-console.log(historial.mostrarHistorial());
-// Eliminar una acción por ID
-historial.eliminarAccionPorID(2); // Eliminar la acción de actualización de perfil
-// Mostrar el historial después de la eliminación
-console.log("\nHistorial después de eliminar la acción de actualización de perfil:");
-console.log(historial.mostrarHistorial());
-// Eliminar todo el historial
-historial.eliminarTodo();
-// Mostrar el historial después de eliminar todo
-console.log("\nHistorial después de eliminar todas las acciones:");
-console.log(historial.mostrarHistorial());
+historial.mostrarHistorial();
+// // Eliminar una acción por ID
+// historial.eliminarAccionPorID(2) // Eliminar la acción de actualización de perfil
+// // Mostrar el historial después de la eliminación
+// console.log("\nHistorial después de eliminar la acción de actualización de perfil:");
+// console.log(historial.mostrarHistorial())
+// // Eliminar todo el historial
+// historial.eliminarTodo()
+// // Mostrar el historial después de eliminar todo
+// console.log("\nHistorial después de eliminar todas las acciones:");
+// console.log(historial.mostrarHistorial())
