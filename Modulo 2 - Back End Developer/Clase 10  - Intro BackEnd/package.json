@@ -1,0 +1,14 @@
+{
+  "name": "clase-10---intro-backend",
+  "version": "1.0.0",
+  "descripcion":"Intro de BackEnd",
+  "main": "main.js",
+  "type": "commonjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
