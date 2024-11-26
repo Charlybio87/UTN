@@ -13,12 +13,12 @@
  * soporte
  */
 
-class Historial {
+class Historial_1 {
   accion_id_counter: number = 0;
   acciones: Array<{id: number, tipo: string, descripcion: string, fecha: Date}> = [];
 
-  constructor(accion_id_counter: number, acciones: Array<{id: number, tipo: string, descripcion: string, fecha: Date}>) {
-    this.accion_id_counter = accion_id_counter;
+  constructor(acciones: Array<{id: number, tipo: string, descripcion: string, fecha: Date}>) {
+    this.accion_id_counter = 0;
     this.acciones = acciones;
   }
 
@@ -28,13 +28,11 @@ class Historial {
   }
 
   eliminarPorId(id: number) {
-    this.acciones = this.acciones.filter(accion => accion.id !== id); // Eliminar acción por ID (filtra el id distinto al buscado)
-    // this.acciones = this.acciones.find(accion => accion.id === 'id');
-    // this.acciones = this.acciones.findIndex(accion => accion.id === 'id');
+    this.acciones = this.acciones.filter(accion => accion.id !== id); // filtra los id distinto al buscado                                 
   }
 
   eliminarTodo() {
-    this.acciones = []; // Vaciar el array de acciones
+    this.acciones = []; // Vacia el array de acciones
   }
 
   mostrarHistorial() {
@@ -43,9 +41,11 @@ class Historial {
 }
 
 // Ejemplo de uso
-const historial = new Historial(0, []); // Crear una instancia de Historial
-historial.agregarAccion({ tipo: 'registro', descripcion: 'Usuario se registró' }); // Agregar una acción
-historial.agregarAccion({ tipo: 'navegacion', descripcion: 'Usuario navegó a la página principal' }); // Agregar otra acción
-historial.mostrarHistorial(); // Mostrar historial de acciones
-historial.eliminarPorId(1);
-historial.mostrarHistorial(); 
+const historial_2 = new Historial_1([]); // Crear una instancia de Historial_1
+const historial_1 = new Historial_1([]); // Crear una instancia de Historial_1
+historial_2.agregarAccion({ tipo: 'registro', descripcion: 'Usuario se registró' }); // Agregar una acción
+historial_2.agregarAccion({ tipo: 'navegacion', descripcion: 'Usuario navegó a la página principal' }); // Agregar otra acción
+historial_1.agregarAccion({ tipo: 'configuracion', descripcion: 'Usuario configuro la pantalla' }); // Agregar una acción
+historial_1.agregarAccion({ tipo: 'notificacion', descripcion: 'Usuario recibio una notificacion de la temperatura' }); // Agregar otra acción
+historial_2.mostrarHistorial(); // Mostrar historial de acciones
+historial_1.mostrarHistorial(); // Mostrar historial de acciones

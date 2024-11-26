@@ -2,8 +2,10 @@
  * Clase que crea y gestiona un historial.
  */
 
+// Clase Base
+
 class Accion {
-  private static contador: number = 0
+  private static contador: number = 0 //Contador estático que se incrementa para asignar un ID único a cada instancia de Accion. 
   id: number
   descripcion: string
   fecha: Date
@@ -71,6 +73,7 @@ class AccionInicioSesion extends Accion{
     )// incluye detalles especificos de esa accion clase derivada (hija)
   }
 }
+
 class AccionCierreSesion extends Accion{
   dispositivo_origen: string 
   tiempo_de_sesion: number
@@ -97,8 +100,7 @@ class AccionCierreSesion extends Accion{
 }
 
 class AccionActualizacionPerfil extends Accion {
-  cambios: Cambio[] // Composicion
-
+  cambios: Cambio[] // Array que contiene los cambios realizados en el perfil.
   constructor(
     descripcion: string,
     fecha: Date,
@@ -132,7 +134,8 @@ class AccionCompra extends Accion {
 
   constructor(
     descripcion: string, 
-    fecha: Date, 
+    fecha: Date,
+    
     productos: string[], 
     total: number
   ) {
@@ -151,7 +154,6 @@ class AccionCompra extends Accion {
   }
 }
 
-// Clase derivada AccionEnvioMensaje
 class AccionEnvioMensaje extends Accion {
   destinatario: string;
   mensaje: string;
@@ -206,20 +208,18 @@ class Historial {
       return console.log(this.acciones.map(accion => accion.mostrarDetalle()).join('\n'))
     }
   }
-  // mostrarHistorial(id: number | void ): string | void {
+  // mostrarHistorial(id: number | void): void | string {
   //   if (id) {
-  //     const accion : Accion | undefined = this.acciones.find(
-  //       (accion : Accion) : boolean => accion.id === id)
-  //     if (accion) {
-  //       return accion.mostrarDetalle()
+  //     const accionEncontrada = this.acciones.find((accion: Accion) => accion.id === id);
+  //     if (accionEncontrada) {
+  //       return console.log(accionEncontrada.mostrarDetalle());
   //     }
   //   } else {
-  //     return this.acciones.map(accion => accion.mostrarDetalle()).join('\n')
+  //     return console.log(this.acciones.map(accion => accion.mostrarDetalle()).join('\n'));
   //   }
   // }
-  // mostrarHistorial():string{
-  //   return this.acciones.map(accion => accion.mostrarDetalle()).join('\n')
-  // }
+  /*213       const accionEncontrada = this.acciones.find((accion: Accion) => accion.id === id);
+  Found 1 error in script.ts:213 */
 }
 
 //Implementacion del Ejemplo de uso:

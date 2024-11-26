@@ -214,3 +214,76 @@ Resumen General
 El código define un sistema de gestión de acciones, donde se pueden crear diferentes tipos de acciones (como inicio de sesión, cierre de sesión, actualizaciones de perfil, compras y envíos de mensajes), cada una con sus propias propiedades y métodos. La clase Historial actúa como un contenedor para estas acciones, permitiendo agregar, eliminar y mostrar el historial completo de acciones.
 
 Este diseño permite una gran flexibilidad y escalabilidad, ya que se pueden agregar fácilmente nuevos tipos de acciones en el futuro simplemente extendiendo la clase Accion. Además, la encapsulación y la herencia se utilizan para organizar el código y mejorar su mantenibilidad.
+
+----
+
+Aquí tienes un breve comentario sobre cada parte del código:
+
+### Clase Accion
+#### Propiedades:
+
+- private static contador: number = 0: Contador estático que se incrementa para asignar un ID único a cada instancia de Accion.
+- id: number: Identificador único para la acción.
+- descripcion: string: Descripción de la acción.
+- fecha: Date: Fecha en la que se realizó la acción.
+- Constructor: Inicializa la descripción y la fecha, incrementa el contador y asigna un ID único a la acción.
+- Método mostrarDetalle(): Retorna una cadena que contiene el ID, la descripción y la fecha de la acción.
+
+### Clase Cambio
+#### Propiedades:
+
+- id_cambio: number: Identificador único para el cambio.
+- valor_anterio: string: Valor anterior antes del cambio.
+- nuevo_valor: string: Nuevo valor después del cambio.
+- Constructor: Inicializa las propiedades del cambio.
+- Método mostrarCambio(): Retorna una cadena que muestra el ID del cambio, el valor anterior y el nuevo valor.
+
+### Clase AccionInicioSesion (hereda de Accion)
+#### Propiedades:
+
+- dispositivo_origen: string: Dispositivo desde el cual se inició sesión.
+- Constructor: Inicializa la descripción, la fecha y el dispositivo de origen, utilizando super() para llamar al constructor de Accion.
+- Método mostrarDetalle(): Sobrescribe el método de Accion para incluir información adicional sobre el dispositivo de origen.
+
+#### Clase AccionCierreSesion (hereda de Accion)
+### Propiedades:
+
+- dispositivo_origen: string: Dispositivo desde el cual se cerró sesión.
+- tiempo_de_sesion: number: Duración de la sesión en minutos.
+- Constructor: Inicializa las propiedades usando super().
+- Método mostrarDetalle(): Sobrescribe el método de Accion para incluir información sobre el dispositivo de origen y el tiempo de sesión.
+
+### Clase AccionActualizacionPerfil (hereda de Accion)
+#### Propiedades:
+
+- cambios: Cambio[]: Array que contiene los cambios realizados en el perfil.
+- Constructor: Inicializa la descripción, la fecha y los cambios utilizando super().
+- Método mostrarDetalle(): Sobrescribe el método de Accion y muestra los detalles de los cambios realizados.
+
+### Clase AccionCompra (hereda de Accion)
+#### Propiedades:
+
+- productos: string[]: Lista de productos comprados.
+- total: number: Total de la compra.
+- Constructor: Inicializa la descripción, la fecha, los productos y el total utilizando super().
+- Método mostrarDetalle(): Sobrescribe el método de Accion para incluir detalles sobre los productos y el total de la compra.
+
+### Clase AccionEnvioMensaje (hereda de Accion)
+#### Propiedades:
+
+- destinatario: string: Destinatario del mensaje.
+- mensaje: string: Contenido del mensaje.
+- Constructor: Inicializa la descripción, la fecha, el destinatario y el mensaje utilizando super().
+- Método mostrarDetalle(): Sobrescribe el método de Accion para incluir información sobre el destinatario y el mensaje enviado.
+
+### Clase Historial
+#### Propiedad:
+
+- acciones: Accion[]: Array que almacena todas las acciones realizadas.
+- Constructor: Inicializa el array de acciones vacío.
+- Método agregarAccion(accion: Accion): Agrega una nueva acción al historial.
+- Método eliminarAccionPorID(id: number): Elimina una acción del historial según su ID.
+- Método eliminarTodo(): Limpia todas las acciones del historial.
+- Método mostrarHistorial(id: number | void): Muestra los detalles de una acción específica si se proporciona un ID, o el historial completo si no se proporciona. Utiliza forEach para buscar la acción por ID y map para transformar el array de acciones en una cadena que se puede mostrar.
+
+Este conjunto de clases implementa un sistema básico de registro de acciones, donde cada tipo de acción puede ser representado y detallado de manera específica, y permite gestionar un historial de acciones realizadas.

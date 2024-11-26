@@ -44,13 +44,13 @@ function Usuario(nombre, id, email, password) {
  * POO - Funcion Constructora
  * 
  */
-function Proveedor(nombre, id, direccion,telefono, email, productos) {
+function Proveedor(nombre, id, direccion,telefono, email) {
   this.nombre = nombre
   this.id = id
   this.direccion = direccion
   this.telefono = telefono
   this. email = email
-  this.productos = productos
+  this.productos = []
   Proveedor.prototype.getProductoPorId = function(id){
     return this.productos.find(producto => producto.id === id) || null;
   //   for (let producto of this.productos) {

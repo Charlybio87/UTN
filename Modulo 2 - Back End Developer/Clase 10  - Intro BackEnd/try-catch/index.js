@@ -21,7 +21,7 @@
 
 const procesos1 = () => {
   try {
-    console.log(resultado)
+    console.log(resultado) // llama algo que aun no existe
     const resultado = [[]]
   } catch (error) {
     console.error('Se produjo un error: ' + '😫' )

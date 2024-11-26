@@ -16,6 +16,7 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
+// Clase Base
 var Accion = /** @class */ (function () {
     function Accion(descripcion, fecha) {
         Accion.contador++;
@@ -26,7 +27,7 @@ var Accion = /** @class */ (function () {
     Accion.prototype.mostrarDetalle = function () {
         return ("\n      ID: ".concat(this.id, " \n      Descripcion: ").concat(this.descripcion, "\n      Fecha: ").concat(this.fecha));
     };
-    Accion.contador = 0;
+    Accion.contador = 0; //Contador estático que se incrementa para asignar un ID único a cada instancia de Accion. 
     return Accion;
 }());
 var Cambio = /** @class */ (function () {
@@ -104,7 +105,6 @@ var AccionCompra = /** @class */ (function (_super) {
     };
     return AccionCompra;
 }(Accion));
-// Clase derivada AccionEnvioMensaje
 var AccionEnvioMensaje = /** @class */ (function (_super) {
     __extends(AccionEnvioMensaje, _super);
     function AccionEnvioMensaje(descripcion, fecha, destinatario, mensaje) {
