@@ -1,0 +1,20 @@
+{
+  "name": "clase-15",
+  "version": "1.0.0",
+  "description": "",
+  "main": "tarea.js",
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch server.js",
+    "start-tarea": "node --watch tarea.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^4.21.1",
+    "jsonwebtoken": "^9.0.2"
+  }
+}
