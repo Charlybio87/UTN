@@ -1,0 +1,21 @@
+<a href="/">Ir a pagina inicial</a>
+<a href="/products/new">Crear nuevo producto</a>
+
+<h1>{{this.data.title}}</h1>
+{{#each this.data.productos}}
+  <div>
+    <h2>{{this.nombre}}</h2>
+    {{#if this.is_sale}}
+        <div>
+          <span>Oferta 😎 <p class="is_sale">{{this.offer}}% de descuento</p></span>
+        </div>
+      {{else}}
+        <span><strong>NO</strong> tiene Oferta 😥</span>
+    {{/if}}
+    <p>$ {{this.precio}}</p>
+    <span>Descripcion: {{this.descripcion}}</s>
+    <p>Stock: {{this.stock}}</p>
+  </div>
+  <a href="/products/{{this.id}}">Entrar al producto</a>
+  <hr>
+{{/each}}

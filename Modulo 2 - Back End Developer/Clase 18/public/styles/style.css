@@ -1,0 +1,7 @@
+body{
+  background-color: rgb(226, 143, 157);
+}
+.is_sale{
+  font-size: 25px;
+  font-weight: bold;
+}

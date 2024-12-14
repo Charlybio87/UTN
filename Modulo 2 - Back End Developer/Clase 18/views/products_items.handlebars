@@ -1,0 +1,16 @@
+<a href="/products">Ir a productos</a>
+
+<h1>{{this.data.products_info.nombre}}</h1>
+<div>
+  <span>Descripcion: {{this.data.products_info.descripcion}}</s>
+  <p>Stock: {{this.data.products_info.stock}}</p>
+</div>
+{{#if this.data.products_info.is_sale}}
+    <span>Oferta 😎</span>
+    <p>$ <s>{{this.data.products_info.precio}}</s>
+    <p>10% de descuento al contado.</p>
+  </p>
+  {{else}}
+    <p>Precio: {{this.data.products_info.precio}}</p>
+    <span><strong>NO</strong> tiene Oferta 😥</span>
+{{/if}}

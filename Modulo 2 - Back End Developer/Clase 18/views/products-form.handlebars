@@ -1,0 +1,79 @@
+<a href="/products">Ir a productos</a>
+
+<h1>Crear productos</h1>
+<form action="/products/new" method="POST">
+  <div>
+    <label for="products_nombre">Nombre del producto: </label>
+    <input type="text" name="products_nombre" id="products_nombre">
+    {{#if this.data.errors.products_nombre}}
+      <span style="color: red">{{this.data.errors.products_nombre}}</span>
+    {{/if}}
+  </div>
+  
+  <div>
+    <label for="products_descripcion">Descripción: </label>
+    <input type="text" name="products_descripcion" id="products_descripcion">
+    {{#if this.data.errors.products_descripcion}}
+      <span style="color: red">{{this.data.errors.products_descripcion}}</span>
+    {{/if}}
+  </div>
+  <div>
+    <label for="products_precio">Precio: </label>
+    <input type="text" name="products_precio" id="products_precio">
+    {{#if this.data.errors.products_precio}}
+      <span style="color: red">{{this.data.errors.products_precio}}</span>
+    {{/if}}
+  </div>
+
+  <div>
+    <label for="products_stock">Stock: </label>
+    <input type="number" name="products_stock" id="products_stock">
+    {{#if this.data.errors.products_stock}}
+      <span style="color: red">{{this.data.errors.products_stock}}</span>
+    {{/if}}
+  </div>
+
+  <div>
+    <label for="products_is_sale">Tiene Oferta? </label>
+    <select name="products_is_sale" id="products_is_sale">
+      <option value=''>-</option>
+      <option value="true">Sí</option>
+      <option value="false">No</option>
+    </select>
+    {{#if this.data.errors.products_is_sale}}
+      <span style="color: red">{{this.data.errors.products_is_sale}}</span>
+    {{/if}}
+  </div>
+
+  <div>
+    <label for="products_offer">Oferta (%): </label>
+    <input type="number" name="products_offer" id="products_offer">
+    {{#if this.data.errors.products_offer}}
+      <span style="color: red">{{this.data.errors.products_offer}}</span>
+    {{/if}}
+  </div>
+
+  <button type="submit">Crear</button>
+</form>
+
+
+
+{{!-- <h1>Crear productos</h1>
+<form action="/products/new" method="POST">
+  <div>
+    <label for="name">Nombre del producto: </label>
+    <input type="text" name="products_nombre" id="products_nombre">
+    {{#if this.data.errors.products_nombre}}
+      <span style="color: red">{{this.data.errors.products_nombre}}</span>
+    {{/if}}
+  </div>
+  <div>
+    <label for="name">Descripcion: </label>
+    <input type="text" name="products_descripcion" id="products_descripcion">
+    {{#if this.data.errors.products_descripcion}}
+      <span style="color: red">{{this.data.errors.products_descripcion}}</span>
+    {{/if}}
+  </div>
+
+  <button type="submit">Crear</button>
+</form> --}}
