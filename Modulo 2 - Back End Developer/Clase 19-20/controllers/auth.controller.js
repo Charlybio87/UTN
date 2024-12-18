@@ -137,7 +137,7 @@ export const verifyEmailController = async (req, res) =>{
             await user_to_verify.save()
                 return res.send(`
                 <h1>Email verificado</h1>
-                <a>Login Aqui</a>`
+                <a href='https://laescueladebaristas.com/'>Login Aqui</a>`
             )
         }
     catch(error){
