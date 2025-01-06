@@ -1,0 +1,55 @@
+import express from 'express'
+import ENVIROMENT from './config/enviroment.js'
+import mongoose from './config/mongoDB.config.js'
+import { sendMail } from './utils/mail.util.js'
+import User from './models/User.model.js'
+import cors from 'cors'
+
+const app = express()
+const PORT = ENVIROMENT.PORT 
+
+// Cross-origin resource sharing
+app.use(
+    cors({//recibe consulta de esta sola direccion(origen)
+        origin: 'http://localhost:5173',
+    })
+)
+
+app.use(express.json())
+
+// Status router
+// Route: /api/status
+// GET /ping => devolver status 200
+
+// Auth router
+// Route: /api/auth
+// POST /register => registrarnos
+// POST /login => loguear
+
+// Messages router
+// Route: /api/messages
+// GET /messages => devolver lista de mensajes
+
+
+import statusRoute from './routes/status.route.js'
+import authRouter from './routes/auth.route.js'
+import workspaceRouter from './routes/workspace.route.js'
+
+
+//Delegamos el flujo de consultas a /api/status al enrutador de status
+app.use('/api/status', statusRoute)
+
+app.use('/api/auth', authRouter)
+
+app.use('/api/workspace', workspaceRouter)
+
+app.listen(PORT, () =>{
+    console.log(`El servidor se esta ejecutando en http://localhost:${PORT}`)
+})
+
+// sendMail({
+//     to:'charliemaildev@gmail.com',
+//     subject:'Prueba de envio de correo',
+//     html:`
+//     <p>&copy; 2023 👾. Todos los derechos reservados.</p>`
+// })
